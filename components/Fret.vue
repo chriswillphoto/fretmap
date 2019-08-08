@@ -1,6 +1,6 @@
 <template>
   <div class="fret">
-    
+    {{fretInfo.note}}<br>{{fretInfo.abbrInterval}}
   </div>
 </template>
 
@@ -13,5 +13,9 @@ export default {
 </script>
 
 <style>
-
+  .fret {
+    width: 10%;
+    height: 60px;
+    border: 1px solid black;
+  }
 </style>

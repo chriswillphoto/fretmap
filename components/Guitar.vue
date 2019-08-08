@@ -1,6 +1,6 @@
 <template>
   <div class="guitar-container">
-    <div class="first-string">
+    <div class="string first-string">
       <Fret v-for='fret in firstString' :key='strings[1] + fret.fret' :fretInfo='fret' />
     </div>
   </div>
@@ -73,5 +73,9 @@ export default {
     width: 100%;
     height: 70vh;
     /* background: skyblue; */
+  }
+
+  .string {
+    display: flex;
   }
 </style>
