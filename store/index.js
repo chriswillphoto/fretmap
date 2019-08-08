@@ -8,8 +8,8 @@ export const state = () => ({
     5: 'B',
     6: 'E'
   },
-  activeKey: null,
-  activeMode: null,
+  activeKey: 'C',
+  activeMode: 'Major',
 })
 
 export const mutations = {

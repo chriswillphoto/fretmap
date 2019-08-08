@@ -38,3 +38,8 @@ export var noteIterator = function(i, zero) {
 // }
 
 // console.log(strings)
+
+export var scales = {
+  Major: ['Tonic', 'Major 2nd', 'Major 3rd', 'Perfect 4th', 'Perfect 5th', 'Major 6th', 'Major 7th'],
+  Minor: ['Tonic', 'Major 2nd', 'minor 3rd', 'Perfect 4th', 'Perfect 5th', 'minor 6th', 'minor 7th'],
+}
