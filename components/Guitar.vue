@@ -76,7 +76,7 @@ export default {
           fret.interval = this.intervals[fretIndex]
           fret.abbrInterval = this.abbreviatedIntervals[fretIndex]
 
-          this.scales[this.activeMode].indexOf(fret.interval) != -1 ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
+          this.scales[this.activeMode].includes(fret.interval) ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
         }
         fretData.push(fret)
       }

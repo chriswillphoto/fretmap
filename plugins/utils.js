@@ -56,6 +56,11 @@ export var modes = ['Major', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Mino
 export var majorPentatonics = ['Major', 'Lydian', 'Mixolydian']
 export var minorPentatonics = ['Dorian', 'Phrygian', 'Minor', 'Locrian']
 
+export var arpeggios = {
+  Major: ['Major', 'Maj6', 'Maj7', '7', 'Maj9', '9'],
+  Minor: ['Minor', 'min6', 'min7', '7', 'min9', '9']
+}
+
 
 
 // firstString() {

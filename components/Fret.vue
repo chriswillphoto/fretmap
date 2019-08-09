@@ -1,5 +1,5 @@
 <template>
-  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass]'>
+  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : ""]'>
     {{fretInfo.note}}<br>{{fretInfo.abbrInterval}} 
   </div>
 </template>
@@ -41,11 +41,17 @@ export default {
     transition: all 0.4s;
   }
 
+  .fret.open {
+    border-right: 3px solid black;
+  }
+
   .fret.active {
     background: seashell;
   }
 
-  .pentatonic-true .fret.active.pentatonic {
+  .pentatonic-true:not(.arpeggio-true) .fret.active.pentatonic {
     background: rgba(180, 255, 255, 0.4);
   }
+
+
 </style>
