@@ -55,3 +55,126 @@ export var modes = ['Major', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Mino
 
 export var majorPentatonics = ['Major', 'Lydian', 'Mixolydian']
 export var minorPentatonics = ['Dorian', 'Phrygian', 'Minor', 'Locrian']
+
+
+
+// firstString() {
+//   let fretData = []
+//   // this.strings[1]
+//   for (let i = 0; i < this.fretNumber; i++) {
+//     var zero = this.strings['1']
+//     let fret = noteIterator(i, zero)
+//     if(this.activeKey){
+//       var zeroIndex = this.notes.indexOf(this.activeKey)
+//       var adjustedNotes = [...this.notes.slice(zeroIndex), ...this.notes.slice(0, zeroIndex)]
+//       var fretIndex = adjustedNotes.indexOf(fret.note)
+//       fret.interval = this.intervals[fretIndex]
+//       fret.abbrInterval = this.abbreviatedIntervals[fretIndex]
+
+//       this.scales[this.activeMode].indexOf(fret.interval) != -1 ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
+//     }
+//     fretData.push(fret)
+//   }
+
+//   return fretData
+// },
+// secondString() {
+//   let fretData = []
+//   // this.strings[1]
+//   for (let i = 0; i < this.fretNumber; i++) {
+//     var zero = this.strings['2']
+//     let fret = noteIterator(i, zero)
+//     if(this.activeKey){
+//       var zeroIndex = this.notes.indexOf(this.activeKey)
+//       var adjustedNotes = [...this.notes.slice(zeroIndex), ...this.notes.slice(0, zeroIndex)]
+//       var fretIndex = adjustedNotes.indexOf(fret.note)
+//       fret.interval = this.intervals[fretIndex]
+//       fret.abbrInterval = this.abbreviatedIntervals[fretIndex]
+
+//       this.scales[this.activeMode].indexOf(fret.interval) != -1 ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
+//     }
+//     fretData.push(fret)
+//   }
+
+//   return fretData
+// },
+// thirdString() {
+//   let fretData = []
+//   // this.strings[1]
+//   for (let i = 0; i < this.fretNumber; i++) {
+//     var zero = this.strings['3']
+//     let fret = noteIterator(i, zero)
+//     if(this.activeKey){
+//       var zeroIndex = this.notes.indexOf(this.activeKey)
+//       var adjustedNotes = [...this.notes.slice(zeroIndex), ...this.notes.slice(0, zeroIndex)]
+//       var fretIndex = adjustedNotes.indexOf(fret.note)
+//       fret.interval = this.intervals[fretIndex]
+//       fret.abbrInterval = this.abbreviatedIntervals[fretIndex]
+
+//       this.scales[this.activeMode].indexOf(fret.interval) != -1 ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
+//     }
+//     fretData.push(fret)
+//   }
+
+//   return fretData
+// },
+// fourthString() {
+//   let fretData = []
+//   // this.strings[1]
+//   for (let i = 0; i < this.fretNumber; i++) {
+//     var zero = this.strings['4']
+//     let fret = noteIterator(i, zero)
+//     if(this.activeKey){
+//       var zeroIndex = this.notes.indexOf(this.activeKey)
+//       var adjustedNotes = [...this.notes.slice(zeroIndex), ...this.notes.slice(0, zeroIndex)]
+//       var fretIndex = adjustedNotes.indexOf(fret.note)
+//       fret.interval = this.intervals[fretIndex]
+//       fret.abbrInterval = this.abbreviatedIntervals[fretIndex]
+
+//       this.scales[this.activeMode].indexOf(fret.interval) != -1 ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
+//     }
+//     fretData.push(fret)
+//   }
+
+//   return fretData
+// },
+// fifthString() {
+//   let fretData = []
+//   // this.strings[1]
+//   for (let i = 0; i < this.fretNumber; i++) {
+//     var zero = this.strings['5']
+//     let fret = noteIterator(i, zero)
+//     if(this.activeKey){
+//       var zeroIndex = this.notes.indexOf(this.activeKey)
+//       var adjustedNotes = [...this.notes.slice(zeroIndex), ...this.notes.slice(0, zeroIndex)]
+//       var fretIndex = adjustedNotes.indexOf(fret.note)
+//       fret.interval = this.intervals[fretIndex]
+//       fret.abbrInterval = this.abbreviatedIntervals[fretIndex]
+
+//       this.scales[this.activeMode].indexOf(fret.interval) != -1 ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
+//     }
+//     fretData.push(fret)
+//   }
+
+//   return fretData
+// },
+// sixthString() {
+//   let fretData = []
+//   // this.strings[1]
+//   for (let i = 0; i < this.fretNumber; i++) {
+//     var zero = this.strings['6']
+//     let fret = noteIterator(i, zero)
+//     if(this.activeKey){
+//       var zeroIndex = this.notes.indexOf(this.activeKey)
+//       var adjustedNotes = [...this.notes.slice(zeroIndex), ...this.notes.slice(0, zeroIndex)]
+//       var fretIndex = adjustedNotes.indexOf(fret.note)
+//       fret.interval = this.intervals[fretIndex]
+//       fret.abbrInterval = this.abbreviatedIntervals[fretIndex]
+
+//       this.scales[this.activeMode].indexOf(fret.interval) != -1 ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
+//     }
+//     fretData.push(fret)
+//   }
+
+//   return fretData
+// },
