@@ -17,12 +17,13 @@
 </template>
 
 <script>
+import { arpeggios, majorPentatonics } from '~/plugins/utils.js'
+
 export default {
   data() {
     return {
       notes: [ 'A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab' ],
-      modes: ['Major', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Minor', 'Locrian']
-      // selectedKey: this.$store.state.activeKey
+      modes: ['Major', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Minor', 'Locrian'],
     }
   },
   computed: {
@@ -45,6 +46,9 @@ export default {
     pentatonic() {
       return this.$store.state.pentatonic
     },
+    arpeggioList() {
+      return majorPentatonics.includes(this.activeMode) ? arpeggios.Major : arpeggios.Minor
+    }
   },
   methods: {
     // keyHandler(event) {

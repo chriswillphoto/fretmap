@@ -1,5 +1,5 @@
 <template>
-  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : ""]'>
+  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth]'>
     {{fretInfo.note}}<br>{{fretInfo.abbrInterval}} 
   </div>
 </template>
@@ -24,10 +24,19 @@ export default {
     },
     pentatonicClass(){
       return this.pentatonicCheck.includes(this.fretInfo.interval) ? 'pentatonic' : ''
+    },
+    fretWidth() {
+      if (this.fretInfo.fret > 15) { return 'extra-high' } else
+      if (this.fretInfo.fret > 9) { return 'high' } else 
+      if (this.fretInfo.fret > 5) { return 'medium' }
     }
   },
   methods: {
-    
+    // fretWidth() {
+    //   if (fretInfo.fret > 15) { return 'extra-high' } else
+    //   if (fretInfo.fret > 9) { return 'high' } else 
+    //   if (fretInfo.fret > 5) { return 'medium' }
+    // }
   }
 }
 </script>
@@ -40,6 +49,10 @@ export default {
     /* border: 1px solid black; */
     transition: all 0.4s;
   }
+
+  .fret.medium { flex: 0.85; }
+  .fret.high { flex: 0.75; }
+  .fret.extra-high { flex: 0.6; }
 
   .fret.open {
     border-right: 3px solid black;
