@@ -20,6 +20,10 @@ export const mutations = {
 
   changeMode(state, newMode) {
     state.activeMode = newMode
+  },
+
+  togglePentatonic(state) {
+    state.pentatonic = !state.pentatonic
   }
 }
 

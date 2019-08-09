@@ -1,7 +1,7 @@
 <template>
   <div class="toolbar-container">
-    {{activeKey}} {{activeMode}}
-
+    
+    <span class='keysig' key='1'>{{activeKey}} {{activeMode}}</span><transition name="fade"><span key='2' v-if="pentatonic"> Pentatonic</span></transition>
     <div class='keychanger'>
       <select class='select-css' name="" id=""  v-model='activeKey'>
         <option v-for='note in notes' :key='note'  :value="note">{{note}}</option>
@@ -12,8 +12,7 @@
         <option v-for='mode in modes' :key='mode'  :value="mode">{{mode}}</option>
       </select>
     </div>
-  <label for="pentatonicCheck">Pentatonic</label>
-  <input type="checkbox" name="pentatonic" id="pentatonicCheck">
+  <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>Pentatonic</button>
   </div>
 </template>
 
@@ -42,21 +41,40 @@ export default {
       set: function(newMode) {
         this.$store.commit('changeMode', newMode)
       }
-    }
+    },
+    pentatonic() {
+      return this.$store.state.pentatonic
+    },
   },
   methods: {
     // keyHandler(event) {
     //   const newKey = event.target.value
     //   this.$store.commit('changeKey', newKey)
     // },
-    modeHandler() {
-
+    togglePentatonic() {
+      this.$store.commit('togglePentatonic')
     }
   }
 }
 </script>
 
 <style>
+
+.keysig {
+  animation: fadeIn 0.5s linear forwards 1 ;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
   .toolbar-container {
     /* background: pink; */
     width: 100%;
@@ -102,5 +120,13 @@ export default {
   }
   .select-css option {
       font-weight:normal;
+  }
+
+  .label::selection {
+    background: transparent;
+  }
+
+  .label::after {
+    content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjAuMjg1IDJsLTExLjI4NSAxMS41NjctNS4yODYtNS4wMTEtMy43MTQgMy43MTYgOSA4LjcyOCAxNS0xNS4yODV6Ii8+PC9zdmc+");
   }
 </style>
