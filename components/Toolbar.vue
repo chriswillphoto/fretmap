@@ -12,6 +12,8 @@
         <option v-for='mode in modes' :key='mode'  :value="mode">{{mode}}</option>
       </select>
     </div>
+  <label for="pentatonicCheck">Pentatonic</label>
+  <input type="checkbox" name="pentatonic" id="pentatonicCheck">
   </div>
 </template>
 

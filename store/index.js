@@ -10,6 +10,7 @@ export const state = () => ({
   },
   activeKey: 'C',
   activeMode: 'Major',
+  pentatonic: false
 })
 
 export const mutations = {
