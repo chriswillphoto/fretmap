@@ -32,11 +32,7 @@ export default {
     }
   },
   methods: {
-    // fretWidth() {
-    //   if (fretInfo.fret > 15) { return 'extra-high' } else
-    //   if (fretInfo.fret > 9) { return 'high' } else 
-    //   if (fretInfo.fret > 5) { return 'medium' }
-    // }
+
   }
 }
 </script>

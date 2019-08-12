@@ -11,7 +11,9 @@ export const state = () => ({
   activeKey: 'C',
   activeMode: 'Major',
   pentatonic: false,
-  areggio: null,
+  arpeggio: null,
+  lowerLimit: 0,
+  upperLimit: 22
 })
 
 export const mutations = {
