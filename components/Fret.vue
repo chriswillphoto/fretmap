@@ -1,6 +1,7 @@
 <template>
   <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth, viewFilter, numbers]'>
     {{fretInfo.note}}<br>{{fretInfo.abbrInterval}}
+    <div class='fret-image'></div>
     <div class='fret-number' v-if='fretInfo.numbers'>{{fretInfo.fret}}</div>
   </div>
 </template>
@@ -81,6 +82,15 @@ export default {
     width: 100%;
     top: 105%;
     /* left: 50%; */
+  }
+
+  .fret-image {
+    width:10%;
+    background: linear-gradient(to right, #555, #888 50%, #555);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
   }
 
 
