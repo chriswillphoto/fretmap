@@ -13,6 +13,13 @@
       </select>
     </div>
   <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>Pentatonic</button>
+  <div class="lower-view">
+    <input type="number" min='0' :max='fretNumber - 1' step='1' v-model='lowerView'>
+  </div>
+  <div class="higher-view">
+    <input type="number" min='1' :max='fretNumber' step='1' v-model='upperView'>
+  </div>
+
   </div>
 </template>
 
@@ -43,11 +50,30 @@ export default {
         this.$store.commit('changeMode', newMode)
       }
     },
+    lowerView: {
+      get: function() {
+        return this.$store.state.lowerLimit
+      },
+      set: function(newLowLimit) {
+        this.$store.commit('setLowerLimit', newLowLimit)
+      }
+    },
+    upperView: {
+      get: function() {
+        return this.$store.state.upperLimit
+      },
+      set: function(newHighLimit) {
+        this.$store.commit('setHigherLimit', newHighLimit)
+      }
+    },
     pentatonic() {
       return this.$store.state.pentatonic
     },
     arpeggioList() {
       return majorPentatonics.includes(this.activeMode) ? arpeggios.Major : arpeggios.Minor
+    },
+    fretNumber() {
+      return this.$store.state.fretNumber
     }
   },
   methods: {

@@ -1,5 +1,5 @@
 export const state = () => ({
-  fretNumber: 22,
+  fretNumber: 25,
   strings: {
     1: 'E',
     2: 'A',
@@ -27,6 +27,14 @@ export const mutations = {
 
   togglePentatonic(state) {
     state.pentatonic = !state.pentatonic
+  },
+
+  setLowerLimit(state, newLowLimit) {
+    state.lowerLimit = newLowLimit
+  },
+
+  setHigherLimit(state, newHighLimit) {
+    state.upperLimit = newHighLimit
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth]'>
+  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth, viewFilter]'>
     {{fretInfo.note}}<br>{{fretInfo.abbrInterval}} 
   </div>
 </template>
@@ -29,6 +29,11 @@ export default {
       if (this.fretInfo.fret > 15) { return 'extra-high' } else
       if (this.fretInfo.fret > 9) { return 'high' } else 
       if (this.fretInfo.fret > 5) { return 'medium' }
+    },
+    viewFilter() {
+      if(this.fretInfo.fret > this.$store.state.upperLimit) { return 'hide' } else
+      if (this.fretInfo.fret < this.$store.state.lowerLimit) { return 'hide' } else 
+      { return 'show' }
     }
   },
   methods: {
@@ -60,6 +65,10 @@ export default {
 
   .pentatonic-true:not(.arpeggio-true) .fret.active.pentatonic {
     background: rgba(180, 255, 255, 0.4);
+  }
+
+  .fret.hide {
+    display: none;
   }
 
 
