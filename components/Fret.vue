@@ -1,6 +1,7 @@
 <template>
-  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth, viewFilter]'>
-    {{fretInfo.note}}<br>{{fretInfo.abbrInterval}} 
+  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth, viewFilter, numbers]'>
+    {{fretInfo.note}}<br>{{fretInfo.abbrInterval}}
+    <div class='fret-number' v-if='fretInfo.numbers'>{{fretInfo.fret}}</div>
   </div>
 </template>
 
@@ -34,6 +35,9 @@ export default {
       if(this.fretInfo.fret > this.$store.state.upperLimit) { return 'hide' } else
       if (this.fretInfo.fret < this.$store.state.lowerLimit) { return 'hide' } else 
       { return 'show' }
+    },
+    numbers() {
+      return this.fretInfo.numbers ? 'show-numbers' : ''
     }
   },
   methods: {
@@ -49,6 +53,7 @@ export default {
     height: 60px;
     /* border: 1px solid black; */
     transition: all 0.4s;
+    position: relative;
   }
 
   .fret.medium { flex: 0.85; }
@@ -69,6 +74,13 @@ export default {
 
   .fret.hide {
     display: none;
+  }
+
+  .fret.show-numbers .fret-number{
+    position: absolute;
+    width: 100%;
+    top: 105%;
+    /* left: 50%; */
   }
 
 

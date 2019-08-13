@@ -78,6 +78,8 @@ export default {
 
           this.scales[this.activeMode].includes(fret.interval) ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
         }
+
+        if(stringNumber === 1) { fret.numbers = true }
         fretData.push(fret)
       }
 
