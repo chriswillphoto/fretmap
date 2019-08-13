@@ -12,7 +12,13 @@
         <option v-for='mode in modes' :key='mode'  :value="mode">{{mode}}</option>
       </select>
     </div>
-  <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>Pentatonic</button>
+    <div class="pentatonic" :class='"pentatonic-"+pentatonic'>
+      <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>Pentatonic</button>
+      <transition name="fade">
+      <svg v-if='pentatonic' class='checkmark' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff0000" stroke="#000"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+      </transition>
+    </div>
+  
   <div class="lower-view">
     <input type="number" min='0' :max='fretNumber - 1' step='1' v-model='lowerView'>
   </div>
@@ -31,6 +37,7 @@ export default {
     return {
       notes: [ 'A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab' ],
       modes: ['Major', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Minor', 'Locrian'],
+      checkmark: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff0000" stroke="#000"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>'
     }
   },
   computed: {
@@ -109,7 +116,9 @@ export default {
     /* background: pink; */
     width: 100%;
     height: 30vh;
+    flex: 1;
   }
+
   .select-css {
       display: block;
       font-size: 16px;
@@ -156,7 +165,12 @@ export default {
     background: transparent;
   }
 
-  .label::after {
+  /* .label::after {
     content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjAuMjg1IDJsLTExLjI4NSAxMS41NjctNS4yODYtNS4wMTEtMy43MTQgMy43MTYgOSA4LjcyOCAxNS0xNS4yODV6Ii8+PC9zdmc+");
-  }
+    color: blue;
+  } */
+
+  /* .pentatonic-false .checkmark {
+    display: none;
+  } */
 </style>

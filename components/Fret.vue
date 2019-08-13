@@ -60,11 +60,11 @@ export default {
   }
 
   .fret.active {
-    background: seashell;
+    background: rgba(250, 162, 255, 0.4);
   }
 
   .pentatonic-true:not(.arpeggio-true) .fret.active.pentatonic {
-    background: rgba(180, 255, 255, 0.4);
+    background: rgba(161, 214, 255, 0.4);
   }
 
   .fret.hide {

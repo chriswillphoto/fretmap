@@ -95,6 +95,8 @@ export default {
     background-image: url('https://res.cloudinary.com/dz7d2ezqb/image/upload/v1565572379/fretmap-assets/Maple_qmn6fu.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 32px;
+    margin-top: 32px;
   }
 
   .string {
