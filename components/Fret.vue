@@ -28,11 +28,7 @@ export default {
       return this.pentatonicCheck.includes(this.fretInfo.interval) ? 'pentatonic' : ''
     },
     arpClass(){
-      if(this.$store.state.arpeggio){
-        if(arpeggioDefs[this.$store.state.arpeggio].includes(this.fretInfo.interval)){
-          return 'arpeggio'
-        }
-      }
+      if(this.$store.state.arpeggio && arpeggioDefs[this.$store.state.arpeggio].includes(this.fretInfo.interval)){ return 'arpeggio' }
     },
     fretWidth() {
       if (this.fretInfo.fret > 15) { return 'extra-high' } else
@@ -40,9 +36,7 @@ export default {
       if (this.fretInfo.fret > 5) { return 'medium' }
     },
     viewFilter() {
-      if (this.fretInfo.fret > this.$store.state.upperLimit) { return 'hide' } else
-      if (this.fretInfo.fret < this.$store.state.lowerLimit) { return 'hide' } else 
-      { return 'show' }
+      if (this.fretInfo.fret > this.$store.state.upperLimit || this.fretInfo.fret < this.$store.state.lowerLimit) { return 'hide' } else { return 'show' }
     },
     numbers() {
       return this.fretInfo.numbers ? 'show-numbers' : ''
@@ -87,6 +81,14 @@ export default {
 
   .pentatonic-true:not(.arpeggio-true) .fret.active.pentatonic.open {
     background: rgb(200, 231, 255);
+  }
+
+  .arpeggio-true .fret.active.arpeggio {
+    background: rgba(91, 255, 96, 0.4)
+  }
+
+  .arpeggio-true .fret.active.arpeggio.open {
+    background: rgb(151, 252, 154);
   }
 
   .fret.hide {

@@ -1,5 +1,5 @@
 <template>
-  <div class="guitar-container" :class='"pentatonic-"+pentatonic'>
+  <div class="guitar-container" :class='["pentatonic-"+pentatonic, "arpeggio-"+!!arpeggio]'>
     <div class="string sixth-string">
       <Fret v-for='fret in setString(6)' :key='strings[6] + fret.fret' :fretInfo='fret' />
     </div>
@@ -61,6 +61,9 @@ export default {
     pentatonic() {
       return this.$store.state.pentatonic
     },
+    arpeggio() {
+      return this.$store.state.arpeggio
+    }
   }, // end computed
   methods: {
     setString(stringNumber) {
