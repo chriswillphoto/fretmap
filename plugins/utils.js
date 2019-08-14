@@ -68,7 +68,11 @@ export var arpeggioDefs = {
   Maj6: ['Tonic', 'Major 3rd', 'Perfect 5th', 'Major 6th'],
   '6/9': ['Tonic', 'Major 3rd', 'Perfect 5th', 'Major 6th', 'Major 2nd'],
   Maj9: ['Tonic', 'Major 3rd', 'Perfect 5th', 'Major 7th', 'Major 2nd'],
-  9: ['Tonic', 'Major 3rd', 'Perfect 5th', 'Major 6th', 'Major 2nd']
+  9: ['Tonic', 'Major 3rd', 'Perfect 5th', 'Major 6th', 'Major 2nd'],
+  Minor: ['Tonic', 'minor 3rd', 'Perfect 5th'],
+  min6: ['Tonic', 'minor 3rd', 'Perfect 5th', 'Major 6th'],
+  min7: ['Tonic', 'minor 3rd', 'Perfect 5th', 'minor 7th'],
+  min9: ['Tonic', 'minor 3rd', 'Perfect 5th', 'minor 7th', 'Major 2nd']
 }
 
 

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { pentatonics, majorPentatonics, minorPentatonics } from '~/plugins/utils.js'
+import { pentatonics, majorPentatonics, minorPentatonics, arpeggioDefs } from '~/plugins/utils.js'
 export default {
   props: [
     'fretInfo'
@@ -33,7 +33,7 @@ export default {
       if (this.fretInfo.fret > 5) { return 'medium' }
     },
     viewFilter() {
-      if(this.fretInfo.fret > this.$store.state.upperLimit) { return 'hide' } else
+      if (this.fretInfo.fret > this.$store.state.upperLimit) { return 'hide' } else
       if (this.fretInfo.fret < this.$store.state.lowerLimit) { return 'hide' } else 
       { return 'show' }
     },
