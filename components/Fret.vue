@@ -1,5 +1,5 @@
 <template>
-  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth, viewFilter, numbers]'>
+  <div class="fret" :class='[fretInfo.activeClass, pentatonicClass, fretInfo.fret == 0 ? "open" : "", fretWidth, viewFilter, numbers, arpClass]'>
     {{fretInfo.note}}<br>{{fretInfo.abbrInterval}}
     <div class='fret-image'></div>
     <div class='fret-number' v-if='fretInfo.numbers'>{{fretInfo.fret}}</div>
@@ -26,6 +26,13 @@ export default {
     },
     pentatonicClass(){
       return this.pentatonicCheck.includes(this.fretInfo.interval) ? 'pentatonic' : ''
+    },
+    arpClass(){
+      if(this.$store.state.arpeggio){
+        if(arpeggioDefs[this.$store.state.arpeggio].includes(this.fretInfo.interval)){
+          return 'arpeggio'
+        }
+      }
     },
     fretWidth() {
       if (this.fretInfo.fret > 15) { return 'extra-high' } else
