@@ -19,18 +19,25 @@
       </transition>
     </div>
   
-  <div class="lower-view">
-    <input type="number" min='0' :max='fretNumber - 1' step='1' v-model='lowerView'>
-  </div>
-  <div class="higher-view">
-    <input type="number" min='1' :max='fretNumber' step='1' v-model='upperView'>
-  </div>
+    <div class="lower-view">
+      <input type="number" min='0' :max='fretNumber - 1' step='1' v-model='lowerView'>
+    </div>
+    <div class="higher-view">
+      <input type="number" min='1' :max='fretNumber' step='1' v-model='upperView'>
+    </div>
+
+    <div class="arpeggio-selector">
+      <select name="" id="" class="select-css" v-model='arpeggio'>
+        <option value=''>(none)</option>
+        <option v-for='arp in arpeggioList' :key='arp' :value='arp'>{{arp}}</option>
+      </select>
+    </div>
 
   </div>
 </template>
 
 <script>
-import { arpeggios, majorPentatonics } from '~/plugins/utils.js'
+import { arpeggios, majorPentatonics, minorPentatonics } from '~/plugins/utils.js'
 
 export default {
   data() {
@@ -78,6 +85,14 @@ export default {
     },
     arpeggioList() {
       return majorPentatonics.includes(this.activeMode) ? arpeggios.Major : arpeggios.Minor
+    },
+    arpeggio: {
+      get: function() {
+        return this.$store.state.arpeggio
+      },
+      set: function(newArp) {
+        this.$store.commit('setArp', newArp);
+      }
     },
     fretNumber() {
       return this.$store.state.fretNumber

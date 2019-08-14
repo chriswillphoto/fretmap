@@ -63,14 +63,23 @@ export default {
 
   .fret.open {
     border-right: 3px solid black;
+    background: white;
+  }
+
+  .fret.open.active {
+    background: rgb(254, 227, 255);
   }
 
   .fret.active {
-    background: rgba(250, 162, 255, 0.4);
+    background: rgba(250, 162, 255, 0.5);
   }
 
   .pentatonic-true:not(.arpeggio-true) .fret.active.pentatonic {
-    background: rgba(161, 214, 255, 0.4);
+    background: rgba(161, 214, 255, 0.5);
+  }
+
+  .pentatonic-true:not(.arpeggio-true) .fret.active.pentatonic.open {
+    background: rgb(200, 231, 255);
   }
 
   .fret.hide {

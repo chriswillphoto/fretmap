@@ -11,9 +11,9 @@ export const state = () => ({
   activeKey: 'C',
   activeMode: 'Major',
   pentatonic: false,
-  arpeggio: null,
+  arpeggio: '',
   lowerLimit: 0,
-  upperLimit: 22
+  upperLimit: 12
 })
 
 export const mutations = {
@@ -35,6 +35,10 @@ export const mutations = {
 
   setHigherLimit(state, newHighLimit) {
     state.upperLimit = newHighLimit
+  },
+
+  setArp(state, newArp){
+    state.arpeggio = newArp;
   }
 }
 
