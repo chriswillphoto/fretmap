@@ -1,3 +1,4 @@
+
 export const state = () => ({
   fretNumber: 25,
   strings: {
@@ -27,6 +28,7 @@ export const mutations = {
 
   togglePentatonic(state) {
     state.pentatonic = !state.pentatonic
+    if(state.pentatonic && state.arpeggio) { state.arpeggio = ''}
   },
 
   setLowerLimit(state, newLowLimit) {
@@ -39,6 +41,7 @@ export const mutations = {
 
   setArp(state, newArp){
     state.arpeggio = newArp;
+    if( state.arpeggio && state.pentatonic) { state.pentatonic = false } 
   }
 }
 
