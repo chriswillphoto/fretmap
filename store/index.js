@@ -20,10 +20,14 @@ export const state = () => ({
 export const mutations = {
   changeKey(state, newKey){
     state.activeKey = newKey
+    state.arpeggio = ''
+    state.pentatonic = false
   },
 
   changeMode(state, newMode) {
     state.activeMode = newMode
+    state.arpeggio = ''
+    state.pentatonic = false
   },
 
   togglePentatonic(state) {

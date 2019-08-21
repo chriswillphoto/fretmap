@@ -15,7 +15,8 @@ import Header from '~/components/Header.vue'
 export default {
   components: {
     Guitar,
-    Toolbar
+    Toolbar,
+    Header
   }
 }
 </script>
