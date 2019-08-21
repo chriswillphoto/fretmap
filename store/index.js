@@ -14,7 +14,8 @@ export const state = () => ({
   pentatonic: false,
   arpeggio: '',
   lowerLimit: 0,
-  upperLimit: 12
+  upperLimit: 12,
+  showModal: false
 })
 
 export const mutations = {
@@ -46,6 +47,14 @@ export const mutations = {
   setArp(state, newArp){
     state.arpeggio = newArp;
     if( state.arpeggio && state.pentatonic) { state.pentatonic = false } 
+  },
+
+  closeModal(state){
+    state.showModal = false
+  },
+
+  showModal(state) {
+    state.showModal = true
   }
 }
 

@@ -3,6 +3,7 @@
     <Header />
     <Guitar />
     <Toolbar />
+    <Modal />
   </div>
 </template>
 
@@ -11,12 +12,17 @@ import Logo from '~/components/Logo.vue'
 import Guitar from '~/components/Guitar.vue'
 import Toolbar from '~/components/Toolbar.vue'
 import Header from '~/components/Header.vue'
+import Modal from '~/components/Modal.vue'
 
 export default {
   components: {
     Guitar,
     Toolbar,
-    Header
+    Header,
+    Modal
+  },
+  computed: {
+    
   }
 }
 </script>

@@ -33,6 +33,7 @@
       </select>
     </div>
 
+    <button class="screenshot" @click='showScreenshot'>Screenshot</button>
   </div>
 </template>
 
@@ -105,25 +106,32 @@ export default {
     // },
     togglePentatonic() {
       this.$store.commit('togglePentatonic')
+    },
+
+    showScreenshot() {
+      console.log('test')
+      var el = document.querySelector("#guitar")
+      var options = {
+        width: 1400,
+        height: 500,
+        useCORS: true,
+        windowWidth: 1400,
+        windowHeight: 500,
+        type: 'dataURL'
+      }
+      this.$html2canvas(el, options).then(function(canvas){
+        var modal = document.querySelector('#modal')
+        modal.setAttribute('src', canvas)
+        // console.log(newImage)
+        // document.body.appendChild(newImage)
+        // console.log(canvas)
+      })
+
+      this.$store.commit('showModal')
     }
   },
   mounted() {
-    var el = document.querySelector("#guitar")
-    var options = {
-      width: 1024,
-      height: 400,
-      useCORS: true,
-      windowWidth: 1024,
-      windowHeight: 400,
-      type: 'dataURL'
-    }
-    this.$html2canvas(el, options).then(function(canvas){
-      var newImage = document.createElement('IMG')
-      newImage.setAttribute('src', canvas)
-      // console.log(newImage)
-      document.body.innerHtml = newImage
-      // console.log(canvas)
-    })
+    
   }
 }
 </script>
