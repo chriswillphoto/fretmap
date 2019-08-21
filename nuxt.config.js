@@ -28,6 +28,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {src: '~/plugins/html2canvas.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules

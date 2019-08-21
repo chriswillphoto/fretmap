@@ -1,5 +1,5 @@
 <template>
-  <div class="guitar-container" :class='["pentatonic-"+pentatonic, "arpeggio-"+!!arpeggio]'>
+  <div class="guitar-container" :class='["pentatonic-"+pentatonic, "arpeggio-"+!!arpeggio]' id='guitar'>
     <div class="string sixth-string">
       <Fret v-for='fret in setString(6)' :key='strings[6] + fret.fret' :fretInfo='fret' />
     </div>

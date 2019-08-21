@@ -106,6 +106,12 @@ export default {
     togglePentatonic() {
       this.$store.commit('togglePentatonic')
     }
+  },
+  mounted() {
+    var el = document.querySelector("#guitar")
+    this.$html2canvas(el).then(function(canvas){
+      document.body.appendChild(canvas)
+    })
   }
 }
 </script>
