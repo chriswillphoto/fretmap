@@ -109,7 +109,11 @@ export default {
   },
   mounted() {
     var el = document.querySelector("#guitar")
-    this.$html2canvas(el).then(function(canvas){
+    var options = {
+      width: 1024,
+      height: 400
+    }
+    this.$html2canvas(el, options).then(function(canvas){
       document.body.appendChild(canvas)
     })
   }
