@@ -111,10 +111,18 @@ export default {
     var el = document.querySelector("#guitar")
     var options = {
       width: 1024,
-      height: 400
+      height: 400,
+      useCORS: true,
+      windowWidth: 1024,
+      windowHeight: 400,
+      type: 'dataURL'
     }
     this.$html2canvas(el, options).then(function(canvas){
-      document.body.appendChild(canvas)
+      var newImage = document.createElement('IMG')
+      newImage.setAttribute('src', canvas)
+      // console.log(newImage)
+      document.body.innerHtml = newImage
+      // console.log(canvas)
     })
   }
 }

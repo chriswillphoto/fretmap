@@ -31,6 +31,7 @@ export default {
   flex-direction: column;
   text-align: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .title {
