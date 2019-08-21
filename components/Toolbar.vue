@@ -110,18 +110,20 @@ export default {
 
     showScreenshot() {
       console.log('test')
-      var el = document.querySelector("#guitar")
+      var el = document.querySelector("#guitar") //IN Guitar.vue
       var options = {
         width: 1400,
-        height: 500,
+        height: 450,
         useCORS: true,
         windowWidth: 1400,
-        windowHeight: 500,
+        windowHeight: 450,
         type: 'dataURL'
       }
       this.$html2canvas(el, options).then(function(canvas){
-        var modal = document.querySelector('#modal')
+        var modal = document.querySelector('#modal') //IN Modal.vue
+        var downloadButton = document.querySelector('#downloadButton')
         modal.setAttribute('src', canvas)
+        downloadButton.setAttribute('href', canvas)
         // console.log(newImage)
         // document.body.appendChild(newImage)
         // console.log(canvas)

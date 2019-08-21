@@ -1,6 +1,7 @@
 <template>
   <div class="modal-container" @click="closeModal" :class="showModal ? 'show' : 'hide'">
     <img src="" alt="" id="modal">
+    <a href="" id="downloadButton" @click='download' download='Boardwalk.png'>Download</a>
   </div>
 </template>
 
@@ -15,6 +16,9 @@ export default {
     closeModal(){
       this.$store.commit('closeModal')
     },
+    download(e){
+      e.stopPropagation()
+    }
   },
   computed: {
     showModal(){
@@ -27,7 +31,7 @@ export default {
 <style scoped>
   .modal-container {
     position: fixed;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     width: 100vw;
     height: 100vh;
     top: 0;
