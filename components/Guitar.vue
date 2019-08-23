@@ -18,6 +18,10 @@
     <div class="string first-string">
       <Fret v-for='fret in setString(1)' :key='strings[1] + fret.fret' :fretInfo='fret' />
     </div>
+
+    <div class="active-key">
+      {{activeKey}} {{activeMode}} <span class='pentatonic' v-if='pentatonic'>Pentatonic</span>
+    </div>
   </div>
 </template>
 
@@ -107,5 +111,10 @@ export default {
   .string {
     display: flex;
     border: 1px solid rosybrown;
+  }
+
+  .active-key {
+    background: white;
+    padding-top: 48px;
   }
 </style>
