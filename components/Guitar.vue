@@ -75,6 +75,9 @@ export default {
     },
     arpeggio() {
       return this.$store.state.arpeggio
+    },
+    showNumbers() {
+      return this.$store.state.showNumbers
     }
   }, // end computed
   methods: {
@@ -94,7 +97,7 @@ export default {
           this.scales[this.activeMode].includes(fret.interval) ? fret.activeClass = 'active' : fret.activeClass = 'inactive'
         }
 
-        if(stringNumber === 1) { fret.numbers = true }
+        if(stringNumber === 1 && this.showNumbers) { fret.numbers = true }
         fretData.push(fret)
       }
 

@@ -15,7 +15,8 @@ export const state = () => ({
   arpeggio: '',
   lowerLimit: 0,
   upperLimit: 12,
-  showModal: false
+  showModal: false,
+  showNumbers: true
 })
 
 export const mutations = {
@@ -55,6 +56,9 @@ export const mutations = {
 
   showModal(state) {
     state.showModal = true
+  },
+  toggleNumbers(state) {
+    state.showNumbers = !state.showNumbers
   }
 }
 
