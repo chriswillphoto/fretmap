@@ -100,6 +100,7 @@ export default {
     width: 100%;
     top: 110%;
     /* left: 50%; */
+    z-index: 100;
   }
 
   .fret-image {

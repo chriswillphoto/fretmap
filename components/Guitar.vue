@@ -22,10 +22,11 @@
     
     <div class="active-key">
       <!-- <div class='key-info' :key='activeKey + activeMode + pentatonic'> -->
-      <div class="key-guide"></div>
+      <div class="key-guide tonic"></div>
       <transition-group name='fade' mode='out-in' tag='div'>
-      <span :key='activeKey'>{{activeKey}}</span> <span :key='activeMode'>{{activeMode}}</span> <span class='pentatonic' :key='pentatonic' v-if='pentatonic'>Pentatonic</span>
+      <span class='active-tonic' :key='activeKey'>{{activeKey}}</span> <span class='active-mode' :key='activeMode'> {{activeMode}}</span>
       </transition-group>
+      <div class='pentatonic' :key='pentatonic' v-if='pentatonic'><div class='pentatonic key-guide'></div>Pentatonic</div>
       <!-- </div> -->
     </div>
 
@@ -103,7 +104,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .guitar-container {
     width: 100%;
     /* height: 70vh; */
@@ -135,9 +136,31 @@ export default {
     /* left: -10%; */
     height: 16px;
     width: 16px;
-    background: rgb(250, 162, 255);
     margin-right: 8px;
     border: 1px solid grey;
     transform: translateY(2px);
+    display: inline-block;
+  }
+
+  .key-guide.tonic {
+    background: rgb(250, 162, 255);
+  }
+
+  .key-guide.pentatonic {
+    background: rgb(161, 214, 255);
+  }
+
+  .active-tonic {
+    /* display: inline-block; */
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .active-mode {
+    display: inline-block;
+    width: 120px;
+    overflow: hidden;
+    vertical-align: bottom;
+    text-align: left;
   }
 </style>

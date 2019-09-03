@@ -2,22 +2,36 @@
   <div class="toolbar-container">
     
     <!-- <span class='keysig' key='1'>{{activeKey}} {{activeMode}}</span><transition name="fade"><span key='2' v-if="pentatonic"> Pentatonic</span></transition> -->
-    <div class='keychanger'>
-      <select class='select-css' name="" id=""  v-model='activeKey'>
-        <option v-for='note in notes' :key='note'  :value="note">{{note}}</option>
-      </select>
+    <div class="dropdowns">
+      <div class='keychanger'>
+        <label>Tonic</label>
+        <select class='select-css' name="" id=""  v-model='activeKey'>
+          <option v-for='note in notes' :key='note'  :value="note">{{note}}</option>
+        </select>
+      </div>
+      <div class='modechanger'>
+        <label>Mode</label>
+        <select class='select-css' name="" id=""  v-model='activeMode'>
+          <option v-for='mode in modes' :key='mode'  :value="mode">{{mode}}</option>
+        </select>
+      </div>
+
+      <div class="arpeggio-selector">
+        <label>Arpeggio</label>
+        <select name="" id="" class="select-css" v-model='arpeggio'>
+          <option value=''>(none)</option>
+          <option v-for='arp in arpeggioList' :key='arp' :value='arp'>{{arp}}</option>
+        </select>
+      </div>
+
+      <div class="pentatonic" :class='"pentatonic-"+pentatonic'>
+        <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>Pentatonic</button>
+        <transition name="fade">
+        <svg v-if='pentatonic' class='checkmark' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff0000" stroke="#000"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+        </transition>
+      </div>
     </div>
-    <div class='modechanger'>
-      <select class='select-css' name="" id=""  v-model='activeMode'>
-        <option v-for='mode in modes' :key='mode'  :value="mode">{{mode}}</option>
-      </select>
-    </div>
-    <div class="pentatonic" :class='"pentatonic-"+pentatonic'>
-      <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>Pentatonic</button>
-      <transition name="fade">
-      <svg v-if='pentatonic' class='checkmark' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ff0000" stroke="#000"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
-      </transition>
-    </div>
+    
   
     <div class="lower-view">
       <input type="number" min='0' :max='fretNumber - 1' step='1' v-model='lowerView'>
@@ -26,12 +40,7 @@
       <input type="number" min='1' :max='fretNumber' step='1' v-model='upperView'>
     </div>
 
-    <div class="arpeggio-selector">
-      <select name="" id="" class="select-css" v-model='arpeggio'>
-        <option value=''>(none)</option>
-        <option v-for='arp in arpeggioList' :key='arp' :value='arp'>{{arp}}</option>
-      </select>
-    </div>
+    
 
     <button class="screenshot" @click='showScreenshot'>Screenshot</button>
   </div>
@@ -152,10 +161,11 @@ export default {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .15s;
+  transition: opacity .15s, width 0.4s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+  max-width: 0;
 }
   .toolbar-container {
     /* background: pink; */
@@ -217,5 +227,9 @@ export default {
 
   /* .pentatonic-false .checkmark {
     display: none;
+  } */
+
+  /* .dropdowns > div {
+    display: inline-block;
   } */
 </style>
