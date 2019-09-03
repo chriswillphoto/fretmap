@@ -116,13 +116,15 @@ export default {
         useCORS: true,
         windowWidth: 1400,
         windowHeight: 450,
-        type: 'dataURL'
+        // type: 'dataURL'
       }
       this.$html2canvas(el, options).then(async (canvas) => {
         var modal = document.querySelector('#modal') //IN Modal.vue
         var downloadButton = document.querySelector('#downloadButton')
-        await modal.setAttribute('src', canvas)
-        await downloadButton.setAttribute('href', canvas)
+        // TODO: INSERT LOGO WATERMARK INTO CANVAS
+        var canvasData = await canvas.toDataURL('image/jpeg', 1)
+        await modal.setAttribute('src', canvasData)
+        await downloadButton.setAttribute('href', canvasData)
         // console.log(newImage)
         // document.body.appendChild(newImage)
         // console.log(canvas)

@@ -21,13 +21,12 @@
 
     
     <div class="active-key">
-      
       <!-- <div class='key-info' :key='activeKey + activeMode + pentatonic'> -->
+      <div class="key-guide"></div>
       <transition-group name='fade' mode='out-in' tag='div'>
       <span :key='activeKey'>{{activeKey}}</span> <span :key='activeMode'>{{activeMode}}</span> <span class='pentatonic' :key='pentatonic' v-if='pentatonic'>Pentatonic</span>
       </transition-group>
       <!-- </div> -->
-      
     </div>
 
   </div>
@@ -124,5 +123,21 @@ export default {
   .active-key {
     background: white;
     padding-top: 48px;
+    position: relative;
+  }
+
+  .active-key > div {
+    display: inline-block;
+  }
+
+  .key-guide {
+    /* position: absolute; */
+    /* left: -10%; */
+    height: 16px;
+    width: 16px;
+    background: rgb(250, 162, 255);
+    margin-right: 8px;
+    border: 1px solid grey;
+    transform: translateY(2px);
   }
 </style>
