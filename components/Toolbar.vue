@@ -1,7 +1,7 @@
 <template>
   <div class="toolbar-container">
     
-    <span class='keysig' key='1'>{{activeKey}} {{activeMode}}</span><transition name="fade"><span key='2' v-if="pentatonic"> Pentatonic</span></transition>
+    <!-- <span class='keysig' key='1'>{{activeKey}} {{activeMode}}</span><transition name="fade"><span key='2' v-if="pentatonic"> Pentatonic</span></transition> -->
     <div class='keychanger'>
       <select class='select-css' name="" id=""  v-model='activeKey'>
         <option v-for='note in notes' :key='note'  :value="note">{{note}}</option>
@@ -109,7 +109,6 @@ export default {
     },
 
     showScreenshot() {
-      console.log('test')
       var el = document.querySelector("#guitar") //IN Guitar.vue
       var options = {
         width: 1400,
@@ -119,17 +118,18 @@ export default {
         windowHeight: 450,
         type: 'dataURL'
       }
-      this.$html2canvas(el, options).then(function(canvas){
+      this.$html2canvas(el, options).then(async (canvas) => {
         var modal = document.querySelector('#modal') //IN Modal.vue
         var downloadButton = document.querySelector('#downloadButton')
-        modal.setAttribute('src', canvas)
-        downloadButton.setAttribute('href', canvas)
+        await modal.setAttribute('src', canvas)
+        await downloadButton.setAttribute('href', canvas)
         // console.log(newImage)
         // document.body.appendChild(newImage)
         // console.log(canvas)
+        this.$store.commit('showModal')
       })
 
-      this.$store.commit('showModal')
+      
     }
   },
   mounted() {
@@ -150,7 +150,7 @@ export default {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .15s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

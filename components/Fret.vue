@@ -98,7 +98,7 @@ export default {
   .fret.show-numbers .fret-number{
     position: absolute;
     width: 100%;
-    top: 105%;
+    top: 110%;
     /* left: 50%; */
   }
 

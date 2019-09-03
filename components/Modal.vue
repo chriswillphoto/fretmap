@@ -62,7 +62,7 @@ export default {
   }
 
   .image-container {
-    max-width: 80vw;
+    width: 92vw;
     position: absolute;
     top: 50%;
     left: 50%;

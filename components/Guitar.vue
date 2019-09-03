@@ -19,9 +19,17 @@
       <Fret v-for='fret in setString(1)' :key='strings[1] + fret.fret' :fretInfo='fret' />
     </div>
 
+    
     <div class="active-key">
-      {{activeKey}} {{activeMode}} <span class='pentatonic' v-if='pentatonic'>Pentatonic</span>
+      
+      <!-- <div class='key-info' :key='activeKey + activeMode + pentatonic'> -->
+      <transition-group name='fade' mode='out-in' tag='div'>
+      <span :key='activeKey'>{{activeKey}}</span> <span :key='activeMode'>{{activeMode}}</span> <span class='pentatonic' :key='pentatonic' v-if='pentatonic'>Pentatonic</span>
+      </transition-group>
+      <!-- </div> -->
+      
     </div>
+
   </div>
 </template>
 
