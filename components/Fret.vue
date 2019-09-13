@@ -56,6 +56,8 @@ export default {
     /* border: 1px solid black; */
     transition: all 0.4s;
     position: relative;
+    z-index: 400;
+    padding-top: 10px;
   }
 
   .fret.medium { flex: 0.85; }

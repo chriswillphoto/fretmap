@@ -24,7 +24,7 @@
       <!-- <div class='key-info' :key='activeKey + activeMode + pentatonic'> -->
       <div class="key-guide tonic"></div>
       <transition-group name='fade' mode='out-in' tag='div'>
-      <span class='active-tonic' :key='activeKey'>{{activeKey}}</span> <span class='active-mode' :key='activeMode'> {{activeMode}}</span>
+      <span class='active-tonic' :key='activeKey'>{{activeKey}}</span><span class='active-mode' :key='activeMode'>&nbsp;{{activeMode}}</span>
       </transition-group>
       <div class='pentatonic' :key='pentatonic' v-if='pentatonic'><div class='pentatonic key-guide'></div>Pentatonic</div>
       <!-- </div> -->
@@ -122,6 +122,25 @@ export default {
   .string {
     display: flex;
     border: 1px solid rosybrown;
+    z-index: 200;
+  }
+
+  .third-string .fret:nth-child(6):after,
+  .third-string .fret:nth-child(8):after,
+  .third-string .fret:nth-child(10):after,
+  .third-string .fret:nth-child(13):after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #5C5248;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
+    z-index: 100;
   }
 
   .active-key {
