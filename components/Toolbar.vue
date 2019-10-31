@@ -97,7 +97,7 @@ export default {
       return this.$store.state.pentatonic
     },
     arpeggioList() {
-      return majorPentatonics.includes(this.activeMode) ? arpeggios.Major : arpeggios.Minor
+      return arpeggios[this.activeMode]
     },
     arpeggio: {
       get: function() {
