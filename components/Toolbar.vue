@@ -32,17 +32,19 @@
       </div>
     </div>
     
-  
-    <div class="lower-view">
-      <input type="number" min='0' :max='fretNumber - 1' step='1' v-model='lowerView'>
-    </div>
-    <div class="higher-view">
-      <input type="number" min='1' :max='fretNumber' step='1' v-model='upperView'>
+    <div class="view-options">
+      <div class="lower-view">
+        <label for="lower-fret-view">Set fret view - Low</label>
+        <input name='lower-fret-view' type="number" min='0' :max='upperView' step='1' v-model='lowerView'>
+      </div>
+      <div class="higher-view">
+        <label for="higher-fret-view">Set fret view - High</label>
+        <input name='higher-fret-view' type="number" min='1' :max='fretNumber' step='1' v-model='upperView'>
+      </div>
     </div>
 
     
-
-    <button class="screenshot" @click='showScreenshot'>Screenshot</button>
+    <button class="screenshot" @click='showScreenshot'>Download Screenshot</button>
   </div>
 </template>
 
@@ -183,6 +185,25 @@ export default {
 
 .pentatonic {
   grid-column: 2;
+}
+
+.view-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 12px;
+  padding: 8px;
+}
+
+.screenshot {
+  width: 180px;
+  height: 36px;
+  text-align: center;
+  background-color: rgb(250, 162, 255);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 12px;
 }
 
   .select-css {
