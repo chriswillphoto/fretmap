@@ -57,8 +57,25 @@ export default {
 
   .close {
     position: absolute;
-    bottom: 100%;
+    bottom: 102%;
     right: 0;
+    padding: 8px;
+    background: transparent;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    line-height: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    transition: all 0.4s;
+  }
+
+  .close:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
   }
 
   .image-container {
