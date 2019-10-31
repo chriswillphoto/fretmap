@@ -58,7 +58,7 @@ export var minorPentatonics = ['Dorian', 'Phrygian', 'Minor', 'Locrian']
 
 export var arpeggios = {
   Major: ['Major Triad', 'Maj7', '7', 'Maj6', '6/9', 'Maj9', '9'],
-  Dorian: ['Minor Triad', 'min7', 'min6', 'min9'],
+  Dorian: ['Minor Triad', 'min7', 'min6', 'min6/9', 'min9'],
   Phrygian: ['Minor Triad', 'min6', 'min7', '7b9'],
   Lydian: ['Major Triad', 'Maj7', 'Maj6', 'Maj9'],
   Mixolydian: ['Major Triad', '7', '9'],
@@ -76,6 +76,7 @@ export var arpeggioDefs = {
   9: ['Tonic', 'Major 3rd', 'Perfect 5th', 'Major 6th', 'Major 2nd'],
   'Minor Triad': ['Tonic', 'minor 3rd', 'Perfect 5th'],
   min6: ['Tonic', 'minor 3rd', 'Perfect 5th', 'Major 6th'],
+  'min6/9': ['Tonic', 'Major 2nd', 'minor 3rd', 'Perfect 5th', 'Major 6th'],
   min7: ['Tonic', 'minor 3rd', 'Perfect 5th', 'minor 7th'],
   min9: ['Tonic', 'minor 3rd', 'Perfect 5th', 'minor 7th', 'Major 2nd'],
   '7b9': ['Tonic', 'minor 2nd', 'Perfect 5th', 'minor 7th']
