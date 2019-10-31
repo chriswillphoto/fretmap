@@ -1,5 +1,5 @@
 <template>
-  <div class="guitar-container" :class='["pentatonic-"+pentatonic, "arpeggio-"+!!arpeggio]' id='guitar'>
+  <div class="guitar-container" :class='["pentatonic-"+!!pentatonic, "arpeggio-"+!!arpeggio, "modal-"+!!showModal]' id='guitar'>
     <div class="string sixth-string">
       <Fret v-for='fret in setString(6)' :key='strings[6] + fret.fret' :fretInfo='fret' />
     </div>
@@ -76,6 +76,9 @@ export default {
     arpeggio() {
       return this.$store.state.arpeggio
     },
+    showModal(){
+      return this.$store.state.showModal
+    },
     showNumbers() {
       return this.$store.state.showNumbers
     }
@@ -117,6 +120,10 @@ export default {
     background-repeat: no-repeat;
     margin-bottom: 32px;
     margin-top: 32px;
+  }
+
+  .guitar-container.modal-true {
+    z-index: -1;
   }
 
   .string {

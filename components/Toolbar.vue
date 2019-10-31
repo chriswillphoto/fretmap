@@ -167,12 +167,23 @@ export default {
   opacity: 0;
   max-width: 0;
 }
-  .toolbar-container {
-    /* background: pink; */
-    width: 100%;
-    height: 30vh;
-    flex: 1;
-  }
+.toolbar-container {
+  /* background: pink; */
+  width: 100%;
+  height: 30vh;
+  flex: 1;
+}
+
+.dropdowns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 12px;
+  padding: 8px;
+}
+
+.pentatonic {
+  grid-column: 2;
+}
 
   .select-css {
       display: block;
