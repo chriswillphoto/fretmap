@@ -27,6 +27,7 @@
       <span class='active-tonic' :key='activeKey'>{{activeKey}}</span><span class='active-mode' :key='activeMode'>&nbsp;{{activeMode}}</span>
       </transition-group>
       <div class='pentatonic' :key='pentatonic' v-if='pentatonic'><div class='pentatonic key-guide'></div>Pentatonic</div>
+      <div class="arpeggio" v-if="arpeggio"><div class='arpeggio key-guide'></div>{{arpeggio}}</div>
       <!-- </div> -->
     </div>
 
@@ -177,6 +178,10 @@ export default {
 
   .key-guide.pentatonic {
     background: rgb(161, 214, 255);
+  }
+
+  .key-guide.arpeggio {
+    background: rgb(180, 245, 182);
   }
 
   .active-tonic {

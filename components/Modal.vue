@@ -71,9 +71,9 @@ export default {
 
   #downloadButton {
     position: absolute;
-    bottom: 0;
+    bottom: 3px;
     right: 0;
-    background: green;
+    background: rgb(85, 164, 85);
   }
 
   svg {
