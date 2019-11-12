@@ -178,10 +178,12 @@ export default {
 
   .key-guide.pentatonic {
     background: rgb(161, 214, 255);
+    margin-left: 24px;
   }
 
   .key-guide.arpeggio {
     background: rgb(180, 245, 182);
+    margin-left: 24px;
   }
 
   .active-tonic {
@@ -192,7 +194,7 @@ export default {
 
   .active-mode {
     display: inline-block;
-    width: 120px;
+    /* width: 120px; */
     overflow: hidden;
     vertical-align: bottom;
     text-align: left;

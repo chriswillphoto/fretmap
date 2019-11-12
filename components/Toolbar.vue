@@ -25,10 +25,12 @@
       </div>
 
       <div class="pentatonic" :class='"pentatonic-"+pentatonic'>
-        <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>Pentatonic</button>
-        <transition name="fade">
-        <svg v-if='pentatonic' class='checkmark' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FAA2FF" stroke="#000"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
-        </transition>
+        <button @click='togglePentatonic' class='label' :class='"pentatonic-"+pentatonic'>
+          Pentatonic 
+          <transition name="fade">
+          <svg v-if='pentatonic' class='checkmark' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#a1d6ff" stroke="#000"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+          </transition>
+        </button>
       </div>
     </div>
     
@@ -186,6 +188,21 @@ export default {
 
 .pentatonic {
   grid-column: 2;
+
+  .label {
+    width: 180px;
+    height: 36px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+  }
 }
 
 .view-options {
